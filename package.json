@@ -1,0 +1,47 @@
+{
+  "name": "kyc",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/client",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mineral/core": "^5.1.2",
+    "@mineral/datagrid": "^2.0.0",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.10",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  },
+  "scripts": {
+    "serve": "webpack serve --mode development",
+    "build-dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@svgr/webpack": "^6.5.0",
+    "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.5.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
