@@ -2,7 +2,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const srcPath = path.join(__dirname, 'src');
+const srcPath = path.join(__dirname, '.');
 
 module.exports = {
   context: srcPath,
@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|ttf)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -60,9 +60,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Know Your Customer',
+      title: 'Four Eyes Flies',
       template: 'index.html.ejs',
-      favicon: 'assets/rally_hug_onion.svg',
+      favicon: 'assets/buggerBIG.svg',
     }),
   ],
 };

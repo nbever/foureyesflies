@@ -1,135 +1,56 @@
-import { useState, useEffect } from 'react';
-import {logout} from './api/authApi';
-import { AppShell,
-  IconButton, Avatar, Menu, MenuItem,
-  AppBar, SvgIcon, Box, Typography, SideNavMenu, SideNavMenuItem, NAV_ITEM_ACTIVE_CLASSNAME } from '@mineral/core';
-import {Group as PeopleIcon} from '@mineral/icons';
-import HugsLogo from './assets/rally_hug_onion.svg';
-import {NavLink, Outlet, useNavigate} from 'react-router-dom';
-import { ROW_STYLE } from './constant_styles';
-import {CUSTOMERS} from './constant_strings';
-import { SelectionContextProvider } from './contexts/SelectionContext';
+import { useTheme } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import SvgIcon from '@mui/material/SvgIcon';
 
-const USER_MENU_ID = 'user menu';
+import SiteChooserButton from './widgets/SiteChooserButton';
 
-const UserMenu = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const navigate = useNavigate();
+import { kaisFliesTheme, malaflyTheme, artTheme, filmTheme } from './styles/themes';
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+import FaceIcon from '../assets/4eyesBIG.svg';
 
-  const doLogout = async () => {
-    await logout();
-    sessionStorage.clear();
-    handleClose();
-    navigate('/login');
-  }
+import {ROW_STYLE, SPACE_AROUND, COLUMN_STYLE, HORIZONTAL_CENTER, combine} from './constant_styles';
 
-  console.log(JSON.parse(sessionStorage.getItem('user'))?.id);
+const App = ({setTheme}) => {
+
+  const theme = useTheme();
 
   return (
-    <>
-      <IconButton
-        aria-controls={open ? USER_MENU_ID : undefined}
-        aria-haspopup
-        aria-expanded={open ? 'true' : undefined}
-        aria-label="User menu"
-        onClick={handleClick}
-        size="large"
-        color="inherit"
-        variant="text">
-        <Avatar
-          size="medium"
-          src={`data:image/jpeg;base64,${JSON.parse(sessionStorage.getItem('user'))?.profile_image}`}
-          sx={{
-            color: 'currentColor',
-            bgcolor: 'transparent',
-            border: '2px solid',
-          }}
+    <Box sx={combine(COLUMN_STYLE, SPACE_AROUND)}>
+      <Box sx={combine(COLUMN_STYLE, HORIZONTAL_CENTER)}>
+        <Box sx={{ borderRadius: '200px', width: '200px', height: '200px', border: `8px solid ${theme.palette.primary.main}`, backgroundColor: 'white', margin: 'auto'}}>
+          <SvgIcon component={FaceIcon} inheritViewBox sx={{ fontSize: '200px'}}/>
+        </Box>
+        <Box sx={combine(ROW_STYLE, HORIZONTAL_CENTER)}>
+          <Typography variant="h3">Kai B.</Typography>
+        </Box>
+      </Box>
+      <Box sx={combine(ROW_STYLE, HORIZONTAL_CENTER, SPACE_AROUND)}>
+        <SiteChooserButton 
+          title="Kai&apos;s Flies" 
+          theme={kaisFliesTheme}
+          setTheme={setTheme} 
         />
-      </IconButton>
-      <Menu
-        id={USER_MENU_ID}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}>
-        <MenuItem onClick={doLogout}>Logout</MenuItem>
-      </Menu>
-    </>
-  );
-};
-
-const BasicLink = ({className, ...restProps}, ref) => {
-  return (
-    <NavLink 
-      {...restProps}
-      end
-      className={({ isActive }) =>
-        [className, isActive ? NAV_ITEM_ACTIVE_CLASSNAME : null]
-          .filter(Boolean)
-          .join(' ')
-      }
-      ref={ref}
-    />
-  );
-};
-
-const MainNav = () => {
-  const navigate = useNavigate();
-  
-  return (
-    <SideNavMenu>
-      <SideNavMenuItem 
-        label="Customers"
-        id="l_customers"
-        icon={<PeopleIcon />}
-        onClick={() => {navigate(CUSTOMERS)}}
-      />
-    </SideNavMenu>
-  );
-}
-
-const HugsImage = () => {
-  return (
-    <Box sx={{...ROW_STYLE}}>
-      <SvgIcon component={HugsLogo} sx={{width: '48px', height: '48px'}} />
-      <Typography variant="h2">Know Your Customer</Typography>
+        <SiteChooserButton 
+          title="Malafly" 
+          theme={malaflyTheme}
+          setTheme={setTheme} 
+        />
+        <SiteChooserButton 
+          title="Kai&apos;s Art" 
+          theme={artTheme}
+          setTheme={setTheme} 
+        />
+        <SiteChooserButton 
+          title="Kai&apos;s Films" 
+          theme={filmTheme}
+          setTheme={setTheme} 
+        />
+      </Box>
     </Box>
   );
 };
-
-const MyAppBar = () => {
-  return (
-    <AppBar actions={<UserMenu/>} logo={<HugsImage/>} color="primary">
-    </AppBar>
-  );
-}
-
-const App = () => {
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!sessionStorage.getItem('user')) {
-      navigate('/login');
-    }
-  }, []);
-
-  return (
-    <AppShell appBar={<MyAppBar/>} leftDrawer={<MainNav />}>
-      <SelectionContextProvider>
-        <Outlet />
-      </SelectionContextProvider>
-    </AppShell>
-  );
-}
 
 export default App;

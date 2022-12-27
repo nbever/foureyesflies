@@ -1,3 +1,13 @@
+export const combine = (...styles) => {
+
+    return styles.reduce((style, item) => {
+        return {
+            ...style,
+            ...item
+        };
+    }, {});
+};
+
 export const FULL_SCREEN = {
     width: '100%',
     height: '100%',
@@ -44,7 +54,8 @@ export const VERTICAL_CENTER = {
 
 export const HORIZONTAL_CENTER = {
     margin: '0',
-    textAlign: 'center'
+    textAlign: 'center',
+    justifyContent: 'center'
 };
 
 export const PADDING_12 = {
