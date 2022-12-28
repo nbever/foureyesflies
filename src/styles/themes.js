@@ -99,7 +99,8 @@ export const malaflyTheme = createTheme({
   typography: {
     fontFamily: [
       'SketchBook'
-    ].join(',')
+    ].join(','),
+    fontSize: 20
   },
   components: {
     MuiCssBaseline: {
