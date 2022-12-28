@@ -18,7 +18,13 @@ export const kaisFliesTheme = createTheme({
   typography: {
     fontFamily: [
       'JurassicKai'
-    ].join(',')
+    ].join(','),
+    h5: {
+      color: red[500]
+    },
+    body1: {
+      color: red[500]
+    }
   },
   components: {
     MuiCssBaseline: {
@@ -45,7 +51,13 @@ export const artTheme = createTheme({
   typography: {
     fontFamily: [
       'KaiArt'
-    ].join(',')
+    ].join(','),
+    h5: {
+      color: blue[900]
+    },
+    body1: {
+      color: blue[900]
+    }
   },
   components: {
     MuiCssBaseline: {
@@ -62,17 +74,20 @@ export const artTheme = createTheme({
 
 export const filmTheme = createTheme({
   palette: {
-    primary: {
+    secondary: {
       main: grey[900]
     },
-    secondary: {
+    primary: {
       main: yellow[600]
     }
   },
   typography: {
     fontFamily: [
       'KaiFilms'
-    ].join(',')
+    ].join(','),
+    body1: {
+      color: yellow[600]
+    }
   },
   components: {
     MuiCssBaseline: {
