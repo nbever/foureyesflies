@@ -18,6 +18,28 @@ export const FULL_SCREEN = {
     top: '0'
 };
 
+export const RELATIVE = {
+    position: 'relative'
+};
+
+export const ABSOLUTE = {
+    position: 'absolute'
+};
+
+export const FULL_HEIGHT = {
+    height: '100%'
+};
+
+export const FULL_WIDTH = {
+    width: '100%'
+};
+
+export const valueSetter = (key, value) => {
+    return {
+        [key]: value
+    };
+};
+
 export const FLEX = {
     display: 'flex'
 };

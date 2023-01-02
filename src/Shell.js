@@ -15,6 +15,8 @@ import KaisFlies from './pages/KaisFlies';
 import KaisArt from './pages/KaisArt';
 import KaisFilms from './pages/KaisFilms';
 import Malafly from './pages/Malafly';
+import MalaflyIndex from './pages/MalaflyIndex';
+import Comic from './pages/Comic';
 
 import { kaisFliesTheme, malaflyTheme, artTheme, filmTheme } from './styles/themes';
 import {KAIS_FLIES_URL, KAIS_ART_URL, KAIS_FILMS_URL, MALAFLY_URL} from './constant_strings';
@@ -56,9 +58,13 @@ const Shell = () => {
               </Route>
               <Route path={KAIS_FILMS_URL} element={<KaisFilms />}>
               </Route>
-              <Route path={MALAFLY_URL} element={<Malafly />}>
+              <Route path={`${MALAFLY_URL}/*`} element={<Malafly />}>
+                <Route index element={<MalaflyIndex />} />
+                <Route path="comics/:issue" element={<Comic />} />
+                <Route path="*" element={<Navigate to={`/${MALAFLY_URL}`} />} />
               </Route>
             </Route>
+            <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>
         </Box>
       </ThemeProvider>

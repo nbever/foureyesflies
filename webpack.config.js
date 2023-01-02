@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const srcPath = path.join(__dirname, '.');
 
@@ -64,5 +65,11 @@ module.exports = {
       template: 'index.html.ejs',
       favicon: 'assets/buggerBIG.svg',
     }),
+    new CopyPlugin({
+      patterns: [
+        {from: path.resolve(__dirname, 'assets', '*.json')},
+        {from: path.resolve(__dirname, 'assets', 'malafly', '*_m.jpg')}
+      ]
+    })
   ],
 };

@@ -1,0 +1,92 @@
+{
+  "comics": [
+    {
+      "title": "Malafly Begins",
+      "filename": "malafly_1_m.jpg",
+      "issue": 1,
+      "date": "12/1/2022",
+      "description": "",
+      "icon": "malafly1_full.svg"
+    },
+    {
+      "title": "Fishing Show",
+      "filename": "malafly_2.jpg",
+      "issue": 2,
+      "date": "12/1/2022",
+      "description": "",
+      "icon": "malafly1_full.svg"
+    },
+    {
+      "title": "Enter the Illegal Fisherman",
+      "filename": "malafly_3_m.jpg",
+      "issue": 3,
+      "date": "12/2/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "The Catch",
+      "filename": "malafly_4_m.jpg",
+      "issue": 4,
+      "date": "12/2/2022",
+      "description": "",
+      "icon": "malafly1_full.svg"
+    },
+    {
+      "title": "The Last Bull Trout - Part I",
+      "filename": "malafly_6_m.jpg",
+      "issue": 6,
+      "date": "12/2/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "The Last Bull Trout - Part II",
+      "filename": "malafly_6.2_m.jpg",
+      "issue": 6.2,
+      "date": "12/2/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "Dad",
+      "filename": "malafly_7_m.jpg",
+      "issue": 7,
+      "date": "12/2/2022",
+      "description": "",
+      "icon": "malafly1_full.svg"
+    },
+    {
+      "title": "The Return of the Illegal Fisherman: Part I",
+      "filename": "malafly_8_m.jpg",
+      "issue": 8,
+      "date": "12/17/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "The Return of the Illegal Fisherman: Part I",
+      "filename": "malafly_8.2_m.jpg",
+      "issue": 8.2,
+      "date": "12/17/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "Revenge of the Illegal Fisherman",
+      "filename": "malafly_9_m.jpg",
+      "issue": 9,
+      "date": "12/31/2022",
+      "description": "",
+      "icon": "malafly-bad-guy-full.svg"
+    },
+    {
+      "title": "New Year's Day",
+      "filename": "malafly_10_m.jpg",
+      "issue": 10,
+      "date": "1/1/2023",
+      "description": "",
+      "icon": "malafly1_full.svg"
+    }
+  ]
+}

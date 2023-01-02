@@ -17,7 +17,8 @@ import BlueWingedOlive from '../assets/bluewingedolive_sm.png';
 import WhitlockFish from '../assets/whitlock_fish_sm.png';
 import FilmImage from '../assets/films_sm.png';
 
-import {ROW_STYLE, SPACE_AROUND, COLUMN_STYLE, HORIZONTAL_CENTER, SPACE_BETWEEN, VERTICAL_CENTER, combine} from './constant_styles';
+import {ROW_STYLE, SPACE_AROUND, COLUMN_STYLE, HORIZONTAL_CENTER, 
+  FULL_HEIGHT, SPACE_BETWEEN, VERTICAL_CENTER, combine} from './constant_styles';
 
 const SMALL_SIZE = '40px';
 const LARGE_SIZE = '200px';
@@ -26,8 +27,13 @@ const App = ({setTheme}) => {
 
   const theme = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const small = location.pathname.length > 2;
+
+  const goHome = () => {
+    navigate("/");
+  };
 
   const buttons = [
     {
@@ -76,9 +82,9 @@ const App = ({setTheme}) => {
   const sizer = small ? SMALL_SIZE : LARGE_SIZE;
 
   return (
-    <Box>
+    <Box sx={combine(COLUMN_STYLE, FULL_HEIGHT, {overflow: 'hidden'})} id="App">
       <Box sx={combine((small ? ROW_STYLE : COLUMN_STYLE), (small ? SPACE_BETWEEN : SPACE_AROUND))}>
-        <Box sx={combine((small ? ROW_STYLE : COLUMN_STYLE), HORIZONTAL_CENTER)}>
+        <Box component="div" sx={combine((small ? ROW_STYLE : COLUMN_STYLE), HORIZONTAL_CENTER, {cursor: 'pointer'})} onClick={goHome}>
           <Box sx={{ borderRadius: `${sizer}`, width: `${sizer}`, height: `${sizer}`, border: `${small ? '2px' : '8px'} solid ${theme.palette.primary.main}`, backgroundColor: 'white', margin: 'auto'}}>
             <SvgIcon component={FaceIcon} inheritViewBox sx={{ fontSize: `${small ? '36px' : '180px'}`}}/>
           </Box>
