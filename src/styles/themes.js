@@ -4,7 +4,7 @@ import { grey, red, yellow, blue, lightGreen} from '@mui/material/colors';
 import JurassicKaiTtf from '../../assets/BungeeInline-Regular.ttf';
 import SketchBook from '../../assets/JustMeAgainDownHere-Regular.ttf';
 import KaiArt from '../../assets/FrederickatheGreat-Regular.ttf';
-import KaiFilms from '../../assets/MovieTimes-pg61.ttf';
+import KaiFilms from '../../assets/Limelight-Regular.ttf';
 
 export const kaisFliesTheme = createTheme({
   palette: {
@@ -86,6 +86,9 @@ export const filmTheme = createTheme({
       'KaiFilms'
     ].join(','),
     body1: {
+      color: grey[50]
+    },
+    h5: {
       color: yellow[600]
     }
   },

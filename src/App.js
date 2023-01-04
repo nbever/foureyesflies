@@ -16,6 +16,7 @@ import FaceIcon from '../assets/4eyesBIG.svg';
 import BlueWingedOlive from '../assets/bluewingedolive_sm.png';
 import WhitlockFish from '../assets/whitlock_fish_sm.png';
 import FilmImage from '../assets/films_sm.png';
+import MalaflyIcon from '../assets/malafly/malafly1_sm.png';
 
 import {ROW_STYLE, SPACE_AROUND, COLUMN_STYLE, HORIZONTAL_CENTER, 
   FULL_HEIGHT, SPACE_BETWEEN, VERTICAL_CENTER, combine} from './constant_styles';
@@ -46,7 +47,8 @@ const App = ({setTheme}) => {
       link: MALAFLY_URL,
       title: 'Malafly',
       theme: malaflyTheme,
-      icon: BlueWingedOlive
+      icon: MalaflyIcon,
+      size: 'cover'
     },
     {
       link: KAIS_ART_URL,

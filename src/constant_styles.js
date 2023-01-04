@@ -70,6 +70,10 @@ export const RIGID = {
     flexGrow: 0
 };
 
+export const WRAP = {
+    flexWrap: 'wrap'
+};
+
 export const VERTICAL_CENTER = {
     alignItems: 'center'
 };
